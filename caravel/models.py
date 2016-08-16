@@ -435,7 +435,7 @@ class Database(Model, AuditMixinNullable):
                       "INTERVAL HOUR({col}) HOUR)"),
                 Grain('day', _('day'), 'DATE({col})'),
                 Grain("week", _('week'), "DATE(DATE_SUB({col}, "
-                      "INTERVAL DAYOFWEEK({col}) - 1 DAY))"),
+                      "INTERVAL WEEKDAY({col}) - 0 DAY))"),
                 Grain("month", _('month'), "DATE(DATE_SUB({col}, "
                       "INTERVAL DAYOFMONTH({col}) - 1 DAY))"),
             ),
